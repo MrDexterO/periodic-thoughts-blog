@@ -1,0 +1,125 @@
+body {
+  min-width: 380px;
+  place-content: center;
+  place-items: center;
+}
+
+.header-about {
+  background:
+    linear-gradient(
+      rgb(255 255 255 / 85%),
+      rgb(255 255 255 / 95%),
+      rgb(255 255 255 / 100%)
+    ),
+    url("/assets/image/aboutBG.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  min-height: 60svh;
+}
+
+section.container.section-header {
+  min-height: unset;
+}
+
+.hero-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 100%;
+  margin: 0 auto;
+  color: var(--clr-secondary-deep-blue);
+  padding-inline: var(--space-xl);
+  gap: var(--space-xl);
+  margin-block: auto;
+  margin-block-end: 2rem;
+
+  /* container-type: inline-size; */
+}
+
+.profile-img,
+.bio-head {
+  flex: 1 1 clamp(320px, 50%, 500px);
+  place-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  max-width: 500px;
+  margin-inline: auto;
+  justify-self: center;
+}
+
+.bio-head {
+  height: 100%;
+  max-width: 500px;
+  container-type: inline-size;
+}
+
+.bio-head h1 {
+  margin-block-end: 1.5rem;
+}
+
+.bio-head h2 {
+  color: var(--clr-ascent-sky-blue);
+  font-family: var(--font-main);
+  max-width: 24ch;
+}
+
+.profile-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--space-xl);
+  aspect-ratio: 1/1;
+}
+
+.profile-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--clr-secondary-deep-blue);
+  margin-block-end: 1rem;
+}
+
+#story-gallery {
+  background-color: hsl(
+    from var(--clr-secondary-deep-blue) h calc(s * 0.5) calc(l + 50) / 25%
+  );
+  border: 2px solid transparent;
+  color: var(--clr-secondary-deep-blue);
+}
+
+#story-gallery .story-list-title,
+#story-gallery p {
+  border-color: var(--clr-secondary-deep-blue);
+}
+
+@media (width <= 1094px) {
+  .hero-section {
+    justify-content: center;
+  }
+
+  .bio-head {
+    margin-inline: auto;
+  }
+
+  .bio-head h1,
+  .bio-head h2 {
+    text-align: center;
+  }
+
+  .profile-img {
+    margin-inline: auto;
+  }
+}

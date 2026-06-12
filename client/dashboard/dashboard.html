@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard UI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="/dashboard/dashboard.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="head-section">
+            <section class="user-welcome-tab">
+                <h1> <a href="/" data-tooltip="Navigate to homepage" class="tooltip-link">Welcome</a>, <span
+                        id="user"></span>. </h1>
+
+                <span id="log-in-time"></span>
+
+
+
+                <button id="all-stories-btn"> All Stories </button>
+            </section>
+
+        </header>
+
+        <main class="body-section">
+            <section class="content-section">
+
+                <section class="all-stories-page">
+                    <div class="all-stories-search">
+                        <input id="search" placeholder="Start typing to search for a story..." />
+                    </div>
+
+                    <div class="story-list-section"></div>
+                </section>
+
+                <div class="header-info">
+                    <div>
+                        <label for="title"> Title </label>
+                        <input id="title" name="title" type="text" placeholder="Title" />
+                    </div>
+
+                    <div>
+                        <label for="sub-title"> Sub-Title </label>
+                        <input id="sub-title" name="sub-title" type="text" placeholder="Sub title" />
+                    </div>
+
+                    <div>
+                        <label for="description"> Description </label>
+                        <input id="description" name="description" type="text" placeholder="Story Description" />
+                    </div>
+
+                    <div>
+                        <label for="img-link"> Title </label>
+                        <input id="img-link" name="img-link" type="text" placeholder="Link to header Image" />
+                    </div>
+                </div>
+
+
+                <div class="content-area">
+                    <div class=" content-area-tab">
+                        <div class="content-area-tab-btns">
+                            <button id="size-btn" aria-label="Change font size">
+                                <i class="fa-solid fa-font"></i>
+                            </button>
+
+                            <button id="bold-btn" aria-label="Change font size">
+                                <i class="fa-solid fa-bold"></i>
+                            </button>
+
+                            <button id="italic-btn" aria-label="Change font size">
+                                <i class="fa-solid fa-italic"></i>
+                            </button>
+
+                            <button id="underline-btn" aria-label="Change font size">
+                                <i class="fa-solid fa-underline"></i>
+                            </button>
+
+                            <button id="strikethrough-btn" aria-label="Change font size">
+                                <i class="fa-solid fa-strikethrough"></i>
+                            </button>
+
+                            <button id="highlighter-btn" aria-label="Change font size">
+                                <i class="fa-solid fa-highlighter"></i>
+                            </button>
+
+                            <button id="align-left-btn" aria-label="Change font size">
+                                <i class="fa-solid fa-align-left"></i>
+                            </button>
+
+                            <button id="list-btn" aria-label="Change font size">
+                                <i class="fa-solid fa-list"></i>
+                            </button>
+
+                            <button id="quote-right-btn" aria-label="Change font size">
+                                <i class="fa-solid fa-quote-right"></i>
+                            </button>
+                        </div>
+
+                        <button id="save-btn"> Save </button>
+
+
+                    </div>
+
+                    <div id="content-area-pad" contenteditable="true"></div>
+                </div>
+
+            </section>
+
+
+
+
+            <section class="output-section">
+                <div class="slug-section">
+                    <div id="slug" contenteditable="true"></div><button id="post-btn"> Post </button>
+                </div>
+                <div class="live-preview">
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer-section"> Footer </footer>
+
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script src="../posts/post.js"></script>
+</body>
+
+
+</html>
