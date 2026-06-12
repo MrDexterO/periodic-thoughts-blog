@@ -1,15 +1,14 @@
+import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
 
-import express from 'express';
-import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import pageRoutes from "./routes/pageRoutes.js";
+import articleRoutes from "./routes/articleRoutes.js";
+import { registerMiddleware } from "./middleware/commonMiddleware.js";
 
-import pageRoutes from './routes/pageRoutes.js';
-import articleRoutes from './routes/articleRoutes.js';
-import { registerMiddleware } from './middleware/commonMiddleware.js';
+import "./config/airtable.js";
 
-import './config/airtable.js';
-
+const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -17,22 +16,14 @@ const app = express();
 
 registerMiddleware(app);
 
-app.use(
-    express.static(
-        path.join(__dirname, '..', 'client')
-    )
-);
+app.use(express.static(path.join(__dirname, "..", "client")));
 
 app.use(pageRoutes(__dirname));
 app.use(articleRoutes);
 
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
-
-
-
-
 
 // import express from 'express';
 // import fs from 'fs/promises';
@@ -79,7 +70,6 @@ app.listen(3000, () => {
 // app.get(['/about', '/about.html'], (req, res) => {
 //     res.sendFile(path.join(__dirname, '..', 'client', 'homepage', 'about.html'));
 // });
-
 
 // /* -------------------- 1. AIRTABLE POST (SAVE ARTICLE) -------------------- */
 
@@ -133,9 +123,6 @@ app.listen(3000, () => {
 //     }
 // });
 
-
-
-
 // /* -------------------- GET ALL ARTICLES (LATEST FIRST) -------------------- */
 // app.get("/api/articles", async (req, res) => {
 //     try {
@@ -159,7 +146,6 @@ app.listen(3000, () => {
 //         res.status(500).json({ error: "Internal server error" });
 //     }
 // });
-
 
 // /* -------------------- GET ARTICLE BY SLUG -------------------- */
 // app.get("/api/articles/slug/:slug", async (req, res) => {
@@ -188,7 +174,6 @@ app.listen(3000, () => {
 //     }
 // });
 
-
 // /* -------------------- DELETE AN ARTICLE BY RECORD ID -------------------- */
 // app.delete('/api/articles/:id', async (req, res) => {
 //     const { id } = req.params;
@@ -200,7 +185,6 @@ app.listen(3000, () => {
 //         res.status(500).json({ error: 'Internal server error' });
 //     }
 // });
-
 
 // /* -------------------- UPDATE AN EXISTING ARTICLE -------------------- */
 // app.put('/api/articles/:id', async (req, res) => {
@@ -227,7 +211,6 @@ app.listen(3000, () => {
 //         res.status(500).json({ error: 'Internal server error' });
 //     }
 // });
-
 
 // /* -------------------- START SERVER -------------------- */
 

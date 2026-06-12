@@ -140,7 +140,9 @@ const renderHomepage = (records) => {
 const loadHomepage = async () => {
   try {
     // Hits our new endpoint returning ALL items sorted by date
-    const response = await fetch("http://localhost:3000/api/articles");
+    const response = await fetch(
+      "https://periodic-thoughts-blog-server.onrender.com/api/articles",
+    );
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
